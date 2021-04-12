@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book List</title>
+    <script src="/bookListController.cd013fd5.js" defer=""></script>
+    <link rel="stylesheet" href="/styles.68af2ffd.css">
+<script src="/styles.68af2ffd.js"></script></head>
+<body>
+    <div class="top">
+        <div class="topbar topwhite toppadding topcard" style="letter-spacing: 4px;">
+            <span class="icon bar-item"></span>
+            <a href="#home" class="bar-item button">Book Management System</a>
+
+            <div class="right-topBar">
+                <a href="#list" class="bar-item button">Book List</a>
+                <a href="#add" class="bar-item button">Add Book Entry</a>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div>
+        <form class="mySearch center">
+            <input type="text" placeholder="Search id" id="search">
+            <button type="submit" id="searchbutton" onclick="searchListById()">Search By ID</button>
+            <input type="text" placeholder="Search" id="searchAuthor">
+            <button type="submit" onclick="searchListByAuthor()">Search By Author</button>
+        </form>
+    </div>
+    <br>
+    <br>
+    <div class="mid-table" style="width: 100%;">
+        <table id="myTable">
+            <tr>
+                <th>
+                    ID
+                </th>
+                <th>
+                    Title
+                </th>
+                <th>
+                    Author
+                </th>
+                <th>
+                    Rating
+                </th>
+                <th>
+                    Details 
+                </th>
+            </tr>
+        </table>
+        <br>
+        <!-- <button type="button" onclick = "showList(); style.display = 'none'">Show</button> -->
+    </div>
+</body>
+</html>

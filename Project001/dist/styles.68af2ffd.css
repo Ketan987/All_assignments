@@ -1,0 +1,158 @@
+.top{
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+}
+
+.topbar{
+    width: 100%;
+    overflow: hidden;
+    /* display: inline-block; */
+    padding: 8px 16px;
+    border:none;
+    display: block;
+    outline: 0;
+    float: left;
+    white-space: normal;
+}
+
+.topwhite{
+    color: #000!important;
+    background-color: #fff!important;
+}
+
+.toppadding{
+    padding: 8px 16px!important;
+
+}
+
+.topcard{
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.bar-item{
+    padding: 8px 16px;
+    float: left;
+    width: auto;
+    border: none;
+    display: block;
+    outline: 0;
+}
+
+.button{
+    border:none;
+    display:inline-block;
+    padding:8px 16px;
+    vertical-align:middle;
+    overflow:hidden;
+    text-decoration:none;
+    color:inherit;
+    background-color:inherit;
+    text-align:center;
+    cursor:pointer;
+    white-space:nowrap;
+}
+
+.right-topBar{
+    padding-right: 20px;
+    border-right: 20px solid #ccc!important;
+    float:right!important;
+}
+
+.icon{
+    background: url("F:/mindtree/tupescipt_basics/Project001/Assets/Icon/two.png");
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+}
+
+
+.display-container{
+    position: relative;
+    background-color: #bcca96;
+
+}
+/* .display-container:hover
+.display-container:hover span */
+
+.content{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 980px;
+}
+
+.display-container:hover{display: block;}
+.display-container:hover span{display: inline-block;}
+
+.content-padding{
+    padding-top: 20px;
+}
+
+.wide{
+    letter-spacing: 4px;
+}
+
+.mid-table{
+    font-family: Arial, Helvetica, sans-serif;
+    align-content: center;
+    width: 100%;
+}
+
+.mid-table td, .mid-table th{
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.mid-table tr:nth-child(even){background-color: #f2f2f2;}
+
+.mid-table tr:hover {background-color: #ddd;}
+
+.mid-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+  }
+
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+  
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+  
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+  
+.myform{
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+/*# sourceMappingURL=/styles.68af2ffd.css.map */
