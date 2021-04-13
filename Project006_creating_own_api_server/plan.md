@@ -1,5 +1,7 @@
-url = ww.alkfasklf.com/books/1
+Get -> get_ha
+post -> 
 
-parts = ["books", "1"]
+/boook/? -->sea
 
-parts[parts.len -1] -> +"1" -> 1 
+/books/1 ->deta
+

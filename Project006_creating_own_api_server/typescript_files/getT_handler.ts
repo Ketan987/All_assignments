@@ -2,7 +2,13 @@ import { IncomingMessage, ServerResponse } from "node:http";
 import * as fs from 'fs';
 
 // const fs = require('fs');
-const records = fs.readFileSync('db.json', 'utf8');
+var records:any;
+fs.readFile('db.json', 'utf8', (err, data) => {
+    if(err)
+        console.log("Erroe whilw loading data");
+    else
+        records = data;
+});
 
 const getHomeRouteHandler = (req:IncomingMessage, res:ServerResponse) => {
     res.end(`Welocome to my server`);

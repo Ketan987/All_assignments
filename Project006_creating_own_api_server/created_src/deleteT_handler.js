@@ -1,6 +1,12 @@
 import * as fs from 'fs';
 // const fs = require('fs');
-var records = fs.readFileSync('db.json', 'utf8');
+var records;
+fs.readFile('db.json', 'utf8', (err, data) => {
+    if (err)
+        console.log("Erroe whilw loading data");
+    else
+        records = data;
+});
 const deleteBookDetailHandler = (req, res) => {
     var _a;
     let parts = (_a = req.url) === null || _a === void 0 ? void 0 : _a.split('/');
@@ -8,6 +14,12 @@ const deleteBookDetailHandler = (req, res) => {
     data.splice(+parts[parts.length - 1] - 1, 1);
     res.end(JSON.stringify(data));
     // fs.writeFileSync(data);
+    fs.writeFile('db.json', JSON.stringify(data), function (err) {
+        if (err) {
+            console.log("Error While Saving file");
+        }
+        ;
+    });
 };
 const deleteBookListHamdler = (req, res) => {
 };

@@ -1,7 +1,13 @@
 // const fs = require('fs');
 import * as fs from 'fs';
 import { IncomingMessage, ServerResponse } from 'node:http';
-var records = fs.readFileSync('db.json', 'utf8');
+var records:any;
+fs.readFile('db.json', 'utf8', (err, data) => {
+    if(err)
+        console.log("Erroe while loading data");
+    else
+        records = data;
+});
 
 const postBookDetailHandler = (req:IncomingMessage, res:ServerResponse)=> {
     var data = JSON.parse(records)["books"];
@@ -11,8 +17,14 @@ const postBookDetailHandler = (req:IncomingMessage, res:ServerResponse)=> {
     req.on('end', () => {
         res.end(JSON.stringify(data));
         // console.log(typeof data);
-        // fs.writeFileSync('db2.json', JSON.stringify(data));
-
+        // fs.writeFile('db2.json', JSON.stringify(data), function(err) {
+        //     if(err){console.log('Not Updating')}
+        //     else
+        //         console.log("Update sucessful!");
+        // })
+        fs.writeFile('db.json', JSON.stringify(data), function(err) {
+            if(err) {console.log("Error While Saving file")};
+        });
     })
 }
 

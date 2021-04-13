@@ -1,6 +1,12 @@
 import * as fs from 'fs';
 // const fs = require('fs');
-const records = fs.readFileSync('db.json', 'utf8');
+var records;
+fs.readFile('db.json', 'utf8', (err, data) => {
+    if (err)
+        console.log("Erroe whilw loading data");
+    else
+        records = data;
+});
 const getHomeRouteHandler = (req, res) => {
     res.end(`Welocome to my server`);
 };
@@ -96,7 +102,7 @@ export const get_handler = (req, res) => {
         if (req.url.indexOf('/?') === 6)
             return getSearchHandler(req, res);
         else {
-            console.log('here actually');
+            // console.log('here actually');
             return getBookDetailHandler(req, res);
         }
     }

@@ -1,6 +1,12 @@
 // const fs = require('fs');
 import * as fs from 'fs';
-var records = fs.readFileSync('db.json', 'utf8');
+var records;
+fs.readFile('db.json', 'utf8', (err, data) => {
+    if (err)
+        console.log("Erroe whilw loading data");
+    else
+        records = data;
+});
 const putBookListtHandler = (req, res) => {
     var data = JSON.parse(records)["books"];
     req.on('data', chunk => {
@@ -8,6 +14,12 @@ const putBookListtHandler = (req, res) => {
     });
     req.on('end', () => {
         res.end(JSON.stringify(data));
+        fs.writeFile('db.json', JSON.stringify(data), function (err) {
+            if (err) {
+                console.log("Error While Saving file");
+            }
+            ;
+        });
     });
 };
 const putBookDetailHandler = (req, res) => {
@@ -25,6 +37,13 @@ const putBookDetailHandler = (req, res) => {
     });
     req.on('end', () => {
         res.end(JSON.stringify(data));
+        fs.writeFile('db.json', data, function (err) {
+            if (err) {
+                throw err;
+            }
+            else
+                console.log("Update sucessful!");
+        });
     });
 };
 const putNotFoundHandler = (req, res) => {

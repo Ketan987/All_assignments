@@ -2,7 +2,13 @@
 import * as fs from 'fs';
 import { IncomingMessage, ServerResponse } from 'node:http';
 
-var records = fs.readFileSync('db.json', 'utf8');
+var records:any;
+fs.readFile('db.json', 'utf8', (err, data) => {
+    if(err)
+        console.log("Erroe whilw loading data");
+    else
+        records = data;
+});
 
 const putBookListtHandler = (req:IncomingMessage, res:ServerResponse) =>{
     var data = JSON.parse(records)["books"];
@@ -11,6 +17,9 @@ const putBookListtHandler = (req:IncomingMessage, res:ServerResponse) =>{
     })
     req.on('end', () => {
         res.end(JSON.stringify(data));
+        fs.writeFile('db.json', JSON.stringify(data), function(err) {
+            if(err) {console.log("Error While Saving file")};
+        });
     })
 }
 
@@ -28,6 +37,11 @@ const putBookDetailHandler = (req:IncomingMessage, res:ServerResponse) => {
     });
     req.on('end', () => {
         res.end(JSON.stringify(data));
+        fs.writeFile('db.json', data, function(err) {
+            if(err){throw err}
+            else
+                console.log("Update sucessful!");
+        })
     })
 }
 
