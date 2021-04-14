@@ -1,5 +1,7 @@
 const { MongoClient } = require('mongodb');
-const url = "mongodb+srv://new-user:fcg9N9UH2NtWsQ9@clustermern.qtl6k.mongodb.net/ClusterMern?retryWrites=true&w=majority";
+const eve = require('dotenv');
+eve.config();
+const url = `mongodb+srv://${process.env.mongodb_user}:${process.env.mongodb_pass}@${process.mongodb_server}/ClusterMern?retryWrites=true&w=majority`;
 const fs = require('fs');
 
 var records;

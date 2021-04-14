@@ -1,12 +1,20 @@
 
 const MongoClient = require('mongodb').MongoClient;
-const url = "mongodb+srv://new-user:fcg9N9UH2NtWsQ9@clustermern.qtl6k.mongodb.net/ClusterMern?retryWrites=true&w=majority";
+const eve = require('dotenv');
+eve.config();
+const url = `mongodb+srv://${process.env.mongodb_user}:${process.env.mongodb_pass}@${process.mongodb_server}/ClusterMern?retryWrites=true&w=majority`;
 const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
 async function run() {
     try {
         await client.connect();
         console.log("Connected correctly to server");
-    } catch (err) {
+        const db = client.db('vivekdata');
+        const col = db.collection('alldata');
+        const myDocs = await col.find();
+        myDocs.forEach(elem => {
+            console.log(elem["title"]);
+        })
+    }catch (err) {
         console.log(err.stack);
     }
     finally {
