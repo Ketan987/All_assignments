@@ -5,3 +5,10 @@ First_review/
 project001_try/
 Project004_json_DoubleFile/
 Project006/pre_junk_js/
+*.env
+Project007_mongo_explain/
+Project008_express_firstapp/
+Project008_Express_mongo/
+Project008_mongoose_express/
+Start_rating_exp/
+React_first/
