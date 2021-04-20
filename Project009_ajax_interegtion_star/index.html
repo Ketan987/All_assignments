@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Json server</title>
+    <link rel="stylesheet" href="./style.css">
+    <!-- <link rel="styleshhet" href="./node_modules/font-awesome/css/font-awesome.min.css"> -->
+
+</head>
+<body>
+    <nav>
+        <h1>All Books data</h1>
+        <button onclick="loadDoc('GET', '../adding.html', createbook, null)">Add New Book</button>
+        <!-- <a href = './adding.html'>Add New Book</a> -->
+        <button onclick="loadDoc('GET', '../searching.html', rendersearch, null)">Search</button>
+    </nav>
+    <!-- <star-rating current = "4" outof = "5" minof = "1"></star-rating> -->
+
+    <div class = "books">
+    </div>
+
+    <script src = "Controller/index.js"></script>
+    <script src = "./Controller/detail.js"></script>
+    <script src = "./Controller/search.js"></script>
+    <script src = "./Controller/adding.js"></script>
+    <script src = "./Controller/star_rating.js"></script>
+</body>
+</html>
