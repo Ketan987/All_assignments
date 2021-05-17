@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src= "./Controller/search.js"></script>
+</head>
+<body>
+    <h2>Search</h2>
+    <div>
+        <label for="choose">Choose :</label>
+
+        <select name="choose" id="choose">
+            <option value="id">Id</option>
+            <option value="title">Title</option>
+            <option value = "author">Author</option>
+            <option value="series">Series</option>
+        </select>
+        <br>
+        <input type = "text" id = "selection">
+        <button id = "search">Search</button>
+    </div>
+    <div class = "records">
+    </div>
+    
+</body>
+</html>
